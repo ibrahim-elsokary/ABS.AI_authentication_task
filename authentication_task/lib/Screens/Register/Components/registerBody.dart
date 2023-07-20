@@ -1,7 +1,6 @@
 import 'package:authentication_task/Screens/Register/functionality/sign_up_feature.dart';
 import 'package:authentication_task/validation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../components/buttons.dart';
@@ -213,10 +212,13 @@ class _RegisterBodyState extends State<RegisterBody> {
                       if (emptyArea == false) {
                         await displaySnackBar("loading");
                         // TODO: add your code to register by email & password and store the user data in firestore
-                        SignUpFeature.signUp(context,
+                        // i created the function into class named SignUpFeature to make it more readable😃
+                        if (await SignUpFeature.signUp(
                             userName: _userName!,
                             email: _email!,
-                            password: _password!);
+                            password: _password!)) {
+                          Navigator.pushNamed(context, HomePage.routeName);
+                        }
                       }
                     }),
 ///////////////////////////////////////////////////////////////////////////////////

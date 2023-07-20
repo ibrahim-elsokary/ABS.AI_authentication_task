@@ -15,10 +15,9 @@ class LoginFeature {
       final userDocument =
           await FirebaseFirestore.instance.collection('users').doc(uid).get();
       final userData = userDocument.data();
-      final encryptedPassword = Encryptor.encrypt(uid, password);
-
-      return userData?['userEmail'] == email &&
-          userData?['userPassword'] == encryptedPassword;
+      final decryptedPassword =
+          Encryptor.decrypt(uid, userData?['userPassword']);
+      return userData?['userEmail'] == email && password == decryptedPassword;
     } catch (e) {
       if (e is FirebaseAuthException) {
         Fluttertoast.showToast(msg: e.message!, gravity: ToastGravity.SNACKBAR);

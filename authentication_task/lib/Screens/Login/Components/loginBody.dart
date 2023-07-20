@@ -1,6 +1,7 @@
 import 'package:authentication_task/Screens/Login/functionality/log_in_feature.dart';
 import 'package:authentication_task/Screens/Login/login.dart';
 import 'package:authentication_task/Screens/Register/register.dart';
+import 'package:authentication_task/validation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../components/buttons.dart';
 import 'package:flutter/material.dart';
@@ -75,10 +76,10 @@ class _LoginBodyState extends State<LoginBody> {
                     height: 90.h,
                     child: TextFormField(
                       validator: (value) {
-                        if (value!.isEmpty) {
+                        if (value!.isEmpty || !Validation.email(value)) {
                           displaySnackBar("enter your email");
                           emptyArea = true;
-                          return "empty";
+                          return "invalid email";
                         }
                         return null;
                       },
@@ -119,10 +120,10 @@ class _LoginBodyState extends State<LoginBody> {
                     height: 90.h,
                     child: TextFormField(
                       validator: (value) {
-                        if (value!.isEmpty) {
+                        if (value!.isEmpty || !Validation.password(value)) {
                           displaySnackBar("enter your email");
                           emptyArea = true;
-                          return "empty";
+                          return "invalid password";
                         }
                         return null;
                       },
@@ -201,4 +202,5 @@ class _LoginBodyState extends State<LoginBody> {
   }
 
   // TODO: Create Your Functions Here
+  // i created the function into class named LoginFeature to make it more readable😃
 }
