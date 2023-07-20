@@ -1,3 +1,5 @@
+import 'package:authentication_task/Screens/Login/functionality/log_in_feature.dart';
+import 'package:authentication_task/Screens/Login/login.dart';
 import 'package:authentication_task/Screens/Register/register.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../components/buttons.dart';
@@ -17,6 +19,8 @@ class _LoginBodyState extends State<LoginBody> {
 
   // TODO: Create Your Variables Here
 
+  String? _email;
+  String? _password;
 
   @override
   Widget build(BuildContext context) {
@@ -100,8 +104,9 @@ class _LoginBodyState extends State<LoginBody> {
                         hintStyle: TextStyle(
                             color: textBlack, fontSize: subFontSize.sp),
                       ),
-                      onChanged: (text){
+                      onChanged: (text) {
                         // TODO: add your code to fetch the user email
+                        _email = text;
                       },
                     ),
                   ),
@@ -143,8 +148,9 @@ class _LoginBodyState extends State<LoginBody> {
                         hintStyle: TextStyle(
                             color: textBlack, fontSize: subFontSize.sp),
                       ),
-                      onChanged: (text){
+                      onChanged: (text) {
                         // TODO: add your code to fetch the user password
+                        _password = text;
                       },
                     ),
                   ),
@@ -160,7 +166,10 @@ class _LoginBodyState extends State<LoginBody> {
                       if (emptyArea == false) {
                         await displaySnackBar("loading");
                         // TODO: add your code to log in by email & password
-                        Navigator.pushNamed(context, HomePage.routeName);
+                        if (await LoginFeature.login(
+                            email: _email!, password: _password!)) {
+                          Navigator.pushNamed(context, HomePage.routeName);
+                        }
                       }
                     }),
 ///////////////////////////////////////////////////////////////////////////////////
@@ -192,5 +201,4 @@ class _LoginBodyState extends State<LoginBody> {
   }
 
   // TODO: Create Your Functions Here
-
 }

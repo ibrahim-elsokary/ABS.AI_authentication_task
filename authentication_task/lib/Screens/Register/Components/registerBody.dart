@@ -1,4 +1,4 @@
-import 'package:authentication_task/Screens/Register/functionality/sign_up._feature.dart';
+import 'package:authentication_task/Screens/Register/functionality/sign_up_feature.dart';
 import 'package:authentication_task/validation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';

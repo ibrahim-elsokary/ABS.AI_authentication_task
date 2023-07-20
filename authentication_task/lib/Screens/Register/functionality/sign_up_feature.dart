@@ -1,6 +1,6 @@
-import 'package:aescryptojs/aescryptojs.dart';
 import 'package:authentication_task/Screens/HomePage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:encryptor/encryptor.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -24,7 +24,7 @@ class SignUpFeature {
         collection.doc(value.user?.uid).set({
           "userName": userName,
           "userEmail": email,
-          "userPassword": encryptAESCryptoJS(password, value.user!.uid),
+          "userPassword": Encryptor.encrypt(value.user!.uid, password),
         });
         Navigator.pushNamed(context, HomePage.routeName);
       }).onError<FirebaseAuthException>((error, stackTrace) async {
