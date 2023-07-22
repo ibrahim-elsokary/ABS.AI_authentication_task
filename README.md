@@ -17,7 +17,7 @@ The purpose of this project is to create a backend for authenticating users to a
 
 ## Screenshots
 
-| -  | - |
+|   |  |
 | ------------- | ------------- |
 | ![reg auth client side](https://github.com/ibrahim-elsokary/ABS.AI_authentication_task/assets/107218787/15776f10-f060-4b90-b3e9-8e77c3c49907)| ![reg auth server side png](https://github.com/ibrahim-elsokary/ABS.AI_authentication_task/assets/107218787/deb6eb79-8ec1-4a81-8fc9-ff0cab407042)|
 | ![reg auth server side 2](https://github.com/ibrahim-elsokary/ABS.AI_authentication_task/assets/107218787/529e8302-8748-4309-bdf2-93f470587b6c) |![Screenshot_1689896141](https://github.com/ibrahim-elsokary/ABS.AI_authentication_task/assets/107218787/67a408bb-8336-4486-bd3a-1820bc36716b)|
