@@ -15,6 +15,10 @@ The purpose of this project is to create a backend for authenticating users to a
 ## Demo
 ![Screen-Recording-_7-22-2023-6-50-05-AM_](https://github.com/ibrahim-elsokary/ABS.AI_authentication_task/assets/107218787/20b83c52-bf9f-4e45-918b-35760bc35c34)
 
+
+![Screenshot 2023-07-22 123656](https://github.com/ibrahim-elsokary/ABS.AI_authentication_task/assets/107218787/7a11a71d-f43c-460c-a3fe-0e5203a6c7eb)
+
+
 ## Screenshots
 
 |   |  |
